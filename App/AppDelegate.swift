@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import GoogleSignIn
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GIDSignIn.sharedInstance().clientID = "74921297277-uvo3tcvnebhdun6d68v2pvhelu2o7as7.apps.googleusercontent.com"
+        GMSServices.provideAPIKey("AIzaSyACn1k_ZXNfoC9cooHCXdCMGK9lDwPpkxk")
+        GMSPlacesClient.provideAPIKey("AIzaSyACn1k_ZXNfoC9cooHCXdCMGK9lDwPpkxk")
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -41,12 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        AppDelegate.saveContext()
     }
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    static var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -73,10 +82,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
 
-    // MARK: - Core Data Saving support
+    static var context: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
+    static func saveContext () {
         if context.hasChanges {
             do {
                 try context.save()
