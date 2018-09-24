@@ -16,6 +16,12 @@
 		DB4C64C1213F593900872E85 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB4C64BF213F593900872E85 /* App.xcdatamodeld */; };
 		DB4C64C3213F593900872E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4C64C2213F593900872E85 /* Assets.xcassets */; };
 		DB4C64C6213F593900872E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4C64C4213F593900872E85 /* LaunchScreen.storyboard */; };
+		DB5D69692155CC570088B2D0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D69682155CC570088B2D0 /* DataService.swift */; };
+		DB5D696B2155CD8F0088B2D0 /* PlaceVietNam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D696A2155CD8F0088B2D0 /* PlaceVietNam.swift */; };
+		DB5D696D2155D55B0088B2D0 /* MienTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D696C2155D55B0088B2D0 /* MienTableViewController.swift */; };
+		DB5D696F2155D5700088B2D0 /* PlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D696E2155D5700088B2D0 /* PlaceTableViewController.swift */; };
+		DB5D69712155DCAC0088B2D0 /* PlacesVietnam.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB5D69702155DCAC0088B2D0 /* PlacesVietnam.plist */; };
+		DB5D69732155EC2B0088B2D0 /* ShowPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D69722155EC2B0088B2D0 /* ShowPlaceViewController.swift */; };
 		DB9C59F72143519000FB562E /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9C59F62143519000FB562E /* GMapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +39,12 @@
 		DB4C64C2213F593900872E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB4C64C5213F593900872E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB4C64C7213F593900872E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5D69682155CC570088B2D0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		DB5D696A2155CD8F0088B2D0 /* PlaceVietNam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceVietNam.swift; sourceTree = "<group>"; };
+		DB5D696C2155D55B0088B2D0 /* MienTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MienTableViewController.swift; sourceTree = "<group>"; };
+		DB5D696E2155D5700088B2D0 /* PlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewController.swift; sourceTree = "<group>"; };
+		DB5D69702155DCAC0088B2D0 /* PlacesVietnam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlacesVietnam.plist; sourceTree = SOURCE_ROOT; };
+		DB5D69722155EC2B0088B2D0 /* ShowPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPlaceViewController.swift; sourceTree = "<group>"; };
 		DB9C59F62143519000FB562E /* GMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,17 +99,47 @@
 			isa = PBXGroup;
 			children = (
 				DB4C64B8213F593900872E85 /* AppDelegate.swift */,
-				DB4C64BA213F593900872E85 /* LoginViewController.swift */,
-				DB2E076D213FB13400C21A1A /* LoginInfoViewController.swift */,
-				DB4068AF21400540001777C9 /* ShowViewController.swift */,
-				DB9C59F62143519000FB562E /* GMapViewController.swift */,
+				DB5D69672155CB910088B2D0 /* Model */,
+				DB5D69662155CB7C0088B2D0 /* Controller */,
+				DB5D69652155CB770088B2D0 /* View */,
 				DB4C64BC213F593900872E85 /* Main.storyboard */,
 				DB4C64C2213F593900872E85 /* Assets.xcassets */,
 				DB4C64C4213F593900872E85 /* LaunchScreen.storyboard */,
 				DB4C64C7213F593900872E85 /* Info.plist */,
 				DB4C64BF213F593900872E85 /* App.xcdatamodeld */,
+				DB5D69702155DCAC0088B2D0 /* PlacesVietnam.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DB5D69652155CB770088B2D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB4068AF21400540001777C9 /* ShowViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB5D69662155CB7C0088B2D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DB4C64BA213F593900872E85 /* LoginViewController.swift */,
+				DB9C59F62143519000FB562E /* GMapViewController.swift */,
+				DB2E076D213FB13400C21A1A /* LoginInfoViewController.swift */,
+				DB5D696C2155D55B0088B2D0 /* MienTableViewController.swift */,
+				DB5D696E2155D5700088B2D0 /* PlaceTableViewController.swift */,
+				DB5D69722155EC2B0088B2D0 /* ShowPlaceViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DB5D69672155CB910088B2D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB5D69682155CC570088B2D0 /* DataService.swift */,
+				DB5D696A2155CD8F0088B2D0 /* PlaceVietNam.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB4C64C6213F593900872E85 /* LaunchScreen.storyboard in Resources */,
+				DB5D69712155DCAC0088B2D0 /* PlacesVietnam.plist in Resources */,
 				DB4C64C3213F593900872E85 /* Assets.xcassets in Resources */,
 				DB4C64BE213F593900872E85 /* Main.storyboard in Resources */,
 			);
@@ -241,10 +284,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB2E076E213FB13400C21A1A /* LoginInfoViewController.swift in Sources */,
+				DB5D696D2155D55B0088B2D0 /* MienTableViewController.swift in Sources */,
+				DB5D69692155CC570088B2D0 /* DataService.swift in Sources */,
 				DB4068B021400540001777C9 /* ShowViewController.swift in Sources */,
 				DB4C64BB213F593900872E85 /* LoginViewController.swift in Sources */,
 				DB9C59F72143519000FB562E /* GMapViewController.swift in Sources */,
 				DB4C64C1213F593900872E85 /* App.xcdatamodeld in Sources */,
+				DB5D69732155EC2B0088B2D0 /* ShowPlaceViewController.swift in Sources */,
+				DB5D696F2155D5700088B2D0 /* PlaceTableViewController.swift in Sources */,
+				DB5D696B2155CD8F0088B2D0 /* PlaceVietNam.swift in Sources */,
 				DB4C64B9213F593900872E85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
